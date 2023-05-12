@@ -1,0 +1,16 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "To do app API",
+      "version": "1.0.0"
+    },
+    "basePath": "/api",
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+    },
+    "definitions": {
+    }
+  }
+  
