@@ -1,5 +1,6 @@
 const {DataTypes} = require('sequelize')
-const sequelize = require('../database') 
+const sequelize = require('../database')
+const Task = require('../models/tasks')
 
 const User = sequelize.define('User',{
     id:{
@@ -19,5 +20,7 @@ const User = sequelize.define('User',{
       password: {
         type: DataTypes.STRING,
         allowNull: false
-    }
+    },
 })
+
+User.hasMany(Task, { foreignKey: 'userId' });
