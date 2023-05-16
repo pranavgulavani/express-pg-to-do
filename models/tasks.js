@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database');
-const User = require('./user');
+const User = require('./users');
 
 const Task = sequelize.define('Task', {
   id: {
@@ -20,7 +20,7 @@ const Task = sequelize.define('Task', {
     type: DataTypes.DATE,
     allowNull: false
   },
-  isCompleted: {
+  completed: {
     type: DataTypes.BOOLEAN,
     defaultValue: false
   },
@@ -33,6 +33,7 @@ const Task = sequelize.define('Task', {
   }
 });
 
+User.hasMany(Task, { foreignKey: 'userId' });
 Task.belongsTo(User, { foreignKey: 'userId' });
 
 module.exports = Task;

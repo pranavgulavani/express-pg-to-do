@@ -21,9 +21,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
 // Test DB connection 
 sequelize
   .authenticate()
@@ -33,5 +30,8 @@ sequelize
   .catch((err) => {
     console.error('Unable to connect to the database:', err);
   });
+
+  app.use('/', indexRouter);
+  app.use('/api', usersRouter);
 
 module.exports = app;
