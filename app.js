@@ -7,7 +7,7 @@ const swagger = require('./swagger');
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var taskRouter = require('./routes/tasks');
 
 var app = express();
 
@@ -29,6 +29,6 @@ sequelize
   });
 
   app.use('/', indexRouter);
-  app.use('/api', usersRouter);
+  app.use('/api', taskRouter);
 
 module.exports = app;

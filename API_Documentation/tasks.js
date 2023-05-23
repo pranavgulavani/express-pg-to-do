@@ -18,7 +18,7 @@
  *           type: boolean
  *
  * @swagger
- * /users/{userId}/tasks:
+ * /tasks/{userId}/tasks:
  *   get:
  *     description: All tasks by user
  *     tags:
@@ -41,7 +41,7 @@
  *                 $ref: '#/components/schemas/Task'
  *
  * @swagger
- * /users/{userId}/tasks:
+ * /tasks/{userId}/tasks:
  *   post:
  *     summary: Create a task for a specific user
  *     tags:
@@ -74,7 +74,7 @@
  *         description: Internal server error
  * 
  * @swagger
- * /users/{userId}/tasks/{taskId}:
+ * /tasks/{userId}/tasks/{taskId}:
  *   put:
  *     summary: Update a task for a specific user
  *     tags:
@@ -113,7 +113,7 @@
  *         description: Internal server error
  * 
  * @swagger
- * /users/{userId}/tasks/{taskId}:
+ * /tasks/{userId}/tasks/{taskId}:
  *   delete:
  *     summary: Delete a task for a specific user
  *     tags:

@@ -4,7 +4,7 @@ const Task = require("../models/tasks")
 const User = require("../models/users")
 
 
-router.get('/users/:userId/tasks',async function(req, res, next) {
+router.get('/tasks/:userId/tasks',async function(req, res, next) {
 
    try{
       const userId = parseInt(req.params.userId)
@@ -21,7 +21,7 @@ router.get('/users/:userId/tasks',async function(req, res, next) {
    }
 })
 
-router.post('/users/:userId/tasks', async (req, res) => {
+router.post('/tasks/:userId/tasks', async (req, res) => {
    try {
      const userId = parseInt(req.params.userId);
      const { title, description, dueDate, completed } = req.body;
@@ -50,7 +50,7 @@ router.post('/users/:userId/tasks', async (req, res) => {
    }
  });
 
- router.put('/users/:userId/tasks/:taskId', async (req, res) => {
+ router.put('/tasks/:userId/tasks/:taskId', async (req, res) => {
    try {
      const userId = parseInt(req.params.userId);
      const taskId = parseInt(req.params.taskId);
@@ -83,7 +83,7 @@ router.post('/users/:userId/tasks', async (req, res) => {
    }
  });
  
- router.delete('/users/:userId/tasks/:taskId', async (req, res) => {
+ router.delete('/tasks/:userId/tasks/:taskId', async (req, res) => {
    try {
      const userId = parseInt(req.params.userId);
      const taskId = parseInt(req.params.taskId);
